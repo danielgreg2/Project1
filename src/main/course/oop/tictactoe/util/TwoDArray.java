@@ -22,7 +22,7 @@ public class TwoDArray {
 		{
 			for(int j = 0; j < cols; ++j)
 			{
-				int[i][j] = defaultVal;
+				towDArr[i][j] = defaultVal;
 			}
 		}
 	}
@@ -31,7 +31,14 @@ public class TwoDArray {
 		/*TODO - (Re)Initialize the array by 
 		 * setting each int to be the defaulVal 
 		 */
-		
+		//the following for loops will set each value of the 2D array to the defaultVal
+		for(int i = 0; i < rows; ++i)
+		{
+			for(int j = 0; j < cols; ++j)
+			{
+				twoDArr[i][j] = defaultVal;
+			}
+		}
 	}
 	
 	public String insertInt(int row, int col, int val) {
@@ -55,8 +62,7 @@ public class TwoDArray {
 		/*TODO - Return the value at the specified row, col
 		 * 
 		 */
-		
-		return 0;
+		return twoDArr[row][col];
 	}
 	
 	public String getArrayDisplay() {
@@ -83,7 +89,49 @@ public class TwoDArray {
 		 * 			)
 		 * 
 		 */
-		
+		int maxUnique = twoDArr.length()*twoDArr[0].length();
+		System.out.println("# of rows: " + twoDArr.length());		//prints # of rows
+		System.out.println("# of columns: " + twoDrr[0].length());	//prints # of cols
+		int[maxUnique][2] uniqueVal = new int[maxUnique][2];	//2D array used to store unique values
+		for(int i = 0; i < twoDArr.length(); ++i)
+		{
+			for(int j = 0; j < twoDArr[i].length(); ++j)
+			{
+				isUnique(int[i][j] twoDArr)	
+			}
+		}
+		for(int i = 0; i < uniqueVal.length(); ++i)
+		{
+			if(uniqueVal[i][1] == 0)	//if the value count is 0, we have reached the end of the list
+				break;
+			else
+			{
+				System.out.println("value: " + uniqueVal[i][0]);
+			}
+		}
+		//function to tell if a value is unique, basically searches array
+		bool isUnique(int value)
+		{
+			//checks to see if the value in question is unique or not
+			for(int k = 0; k < uniqueVal.length(); ++k)
+			{
+				if(uniqueVal[k][0] == value)	//if the value already exists
+				{
+					++uniqueVal[k][1];			//increment its count
+					return true;
+				}
+			}
+			//looks for open space in uniqueVal array to record a new unique value
+			for(int k = 0; k < uniqueVal.length(); ++k)
+			{
+				if(uniqueVal[k][1] == 0)
+				{
+					uniqueVal[k][0] = value;
+					uniqueVal[k][1] = 1;
+					return false;
+				}
+			}
+		}
 		return "Not implemented";
 	}		
 
