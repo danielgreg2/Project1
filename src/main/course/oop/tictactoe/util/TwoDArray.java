@@ -16,6 +16,15 @@ public class TwoDArray {
 		 * the number of rows and columns given. Initialize 
 		 * the array by setting each int to be the defaulVal. 
 		 * */
+		int[][] twoDArr = new int[rows][cols];	//creates a 2D array with #rows = rows, #cols = cols
+		//the following for loops will set each value of the 2D array to the defaultVal
+		for(int i = 0; i < rows; ++i)
+		{
+			for(int j = 0; j < cols; ++j)
+			{
+				int[i][j] = defaultVal;
+			}
+		}
 	}
 	
 	public void initArray(int defaultVal) {
@@ -33,7 +42,7 @@ public class TwoDArray {
 		 * 2. The location [row][col] is no longer the default value
 		 * 		-return "Failure: (row), (col) is not empty.
 		 * 
-		 * 3. val is not the default value; 
+		 * 3. val is the default value; 
 		 * 		-return "Failure: (val) is not allowed."
 		 * 
 		 * Note: Print the int value in place of (). 
