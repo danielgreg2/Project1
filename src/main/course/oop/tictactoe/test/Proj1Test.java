@@ -41,8 +41,15 @@ public class Proj1Test {
 		System.out.println("Display: "+arr2d.getArrayDisplay());
 	}
 	
+	public static void case_1() {
+		TwoDArray obj = new TwoDArray(3, 3, 0);
+		obj.insertInt(2, 2, 0);
+		System.out.println(obj.getArrayDisplay());
+	}
+	
 	public static void main(String[] args) {
-		Proj1Test.runBasicTest(5, 10, 3);		
+		Proj1Test.runBasicTest(5, 10, 3);
+		//Proj1Test.case_1();
 	}
 
 }
